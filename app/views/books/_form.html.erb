@@ -1,0 +1,50 @@
+<% results = "" %>
+<% rtnValue = List.find(:all, :conditions => {:keyword => 'Classification'}).collect {| c | c.value } %>
+<% rtnValue.each do | c | %>
+	<% results = c.split(/\r\n/) %>
+<% end %>
+
+<table width=90% border=0 cellpadding=0 cellspacing=0>
+	<% form_for([@box, @book]) do | f | %>
+		<%# f.error_messages %>
+
+	  	<%= render 'shared/error_messages', :object => f.object %>
+	
+		<table width=90% border=0 cellpadding=0 cellspacing=0>
+			<tr>
+				<td width=30%>&nbsp;</td><td width=60%>&nbsp;</td>
+			</tr>
+		
+			<tr>
+				<td colspan=2 class='curved'>Book details</td>
+			</tr>
+
+			<tr>
+				<td class="Label" valign="top"><%= f.label :title, "Title:" %></td>
+				<td class="Field"><%= f.text_field :title, :size => "60" %></td>
+			</tr>
+			<tr>
+				<td class="Label" valign="top"><%= f.label :author, "Author:" %></td>
+				<td class="Field"><%= f.text_field :author, :size => "60" %></td>
+			</tr>
+			<tr>
+				<td class="Label" valign="top"><%= f.label :description, "Description:" %></td>
+				<td class="Field"><%= f.text_area :description, :size => "80x3" %></td>
+			</tr>
+			<tr>
+				<td class="Label" valign="top"><%= f.label :classification, "Classification:" %></td>
+				<td class="Field"><%= f.select :classification, [""] + results %></td>
+			</tr>
+		</table>
+		
+		<table width=90% border='0' cellpadding='0' cellspacing='0'>
+			<tr>
+				<td align=right>
+					<% if controller.action_name != "show" %>
+						<p><%= f.submit "Submit" %></p>
+					<% end %>
+				</td>
+			</tr>
+		</table>
+	<% end %>
+</table>

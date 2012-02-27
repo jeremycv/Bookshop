@@ -1,0 +1,9 @@
+
+<table width=100% border=0 cellpadding=0 cellspacing=0>
+	<% for f in @lists %>
+	<tr class="someclass">
+		<td class="Underline" width=40%><%= link_to(f.keyword, f) %></td>
+		<td class="Underline" width=60%><%= f.value %></td>
+	</tr>
+	<% end %>
+</table>

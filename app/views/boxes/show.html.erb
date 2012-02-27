@@ -1,0 +1,21 @@
+<table width=100%border='0' cellspacing='0' cellpadding='0'>
+	<tr>
+		<td width=40%><h1>Box: <%= @box.barcode %></h1></td>
+	</tr>
+</table>
+
+<table width=100% border='0' cellpadding='0' cellspacing='0'>
+	<tr>
+		<td width=90%>
+			<%= render :partial => "details" %>
+		</td>
+		
+		<td>
+			<%= render :partial => "outline" %>
+		</td>
+	</tr>
+</table>
+
+<%= render :partial => "books" %>
+
+

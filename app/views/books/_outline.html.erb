@@ -1,0 +1,7 @@
+<table height=100% width=100% border='0' cellpadding='0' cellspacing='0'>
+		<ul id='tool'>	
+			<li id='tool_categ'><%= link_to "Edit", edit_book_path(@book) %></li>
+			<li id='tool_categ'><%= link_to "Delete", @book, :confirm => 'Confirm: Deletion of this book?', :method => :delete %></li>
+			<li id='tool_categ'><%= link_to "Back to Box", box_path(@book.box) %></li>
+		</ul>
+</table>

@@ -1,0 +1,23 @@
+
+<h2>Books stuffed in box</h2>
+<table border='0' width=100% cellspacing='0' cellpadding='0'>
+	<tr>
+		<td class='ToolBar' align='left' width='25%'>Title</td> 
+		<td class='ToolBar' align='left' width='15%'>Author</td>
+		<td class='ToolBar' align='left' >Description</td>
+		<td class='ToolBar' align='left' width='15%'>Classification</td>
+		<td class='ToolBar' align='left' width='5%'>&nbsp;</td>
+	</tr>
+	
+	<% @box.books.each do | book | %>
+		<tr class='someclass'>
+			<td class='Underline'><%= link_to book.title, box_book_path(@box, book) %></td>
+			<td class='Underline'><%= book.author %></td>
+			<td class='Underline'><%= book.description %></td>
+			<td class='Underline'><%= book.classification %></td>
+			<td class='Underline' valign='top'><%= link_to 'Delete', box_book_path(@box, book), :confirm => 'Confirm: Deletion of book?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+
+

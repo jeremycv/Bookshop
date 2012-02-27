@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+	  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	  <title><%= List.find(:all, :conditions => {:keyword => 'Title'}).collect {| c | c.value } %></title>
+	  <%= stylesheet_link_tag 'application' %>
+	  <%= stylesheet_link_tag 'scaffold' %>
+	  <%= javascript_include_tag :defaults %>
+	</head>
+
+	<body>
+		<div id="content">
+			<ul id='nav'>	
+				<li id='nav_categ'><%= link_to "Home", root_path %></li>
+				<li id='nav_categ'><%= link_to "Boxes", boxes_path %></li>
+				<li id='nav_categ'><%= link_to "New Box", new_box_path %></li>
+				<li id='nav_categ'><%= link_to "Books", books_path %></li>
+				<li id='nav_categ'><%= link_to "Favourites", "/favourites" %></li>
+				<li id='nav_categ'><%= link_to "Keywords", lists_path %></li>
+			</ul>
+		
+			<p style="color: red"><%= notice %></p>
+
+			<div id="main">
+				<%= yield %>
+			</div>
+		</div>
+	
+		<div id="footer">
+			<%# render :partial => "users/user_bar" %>	
+		</div>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+<div id="adv_search">
+	<% form_tag( {:action => 'index'}, :method => 'get') do %>
+	
+		<div class="search_element">
+			<strong>Filter Results By:&nbsp;</strong>
+			<label>Barcode:</label>
+			<%= text_field_tag :barcode, h(params[:barcode]) %>
+			<br>
+		</div>
+		
+		<div class="search_element">
+			<label>Status:</label>
+			<%= select_tag :status, options_for_select(Box::VALID_STATUSES + [""], h(params[:status]) )%>
+		</div>
+		
+		<div class="search_element">
+			<%= submit_tag "Filter" %>
+		</div>
+	<% end %>
+</div>

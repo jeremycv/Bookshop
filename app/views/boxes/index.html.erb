@@ -1,0 +1,16 @@
+
+<%= render :partial => "search_subform" %>
+
+<h1>All Stuffed Boxes</h1>
+<div id="toy_listing">
+		<%# render :partial => @boxes %>
+		<table width=100% border=0 cellpadding=0 cellspacing=0>
+		<% @boxes.each do |box| %>
+				<tr class="someclass">
+					<td class="Underline" width=10%><%= link_to(box.barcode, box) %></td>
+					<td class="Underline"><%= box.description %></td>
+					<td class="Underline" width=15%><%= box.status + " - " + box.location %></td>
+				</tr>
+		<% end %>
+		</table>
+</div>

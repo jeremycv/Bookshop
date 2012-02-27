@@ -1,0 +1,20 @@
+
+<table width='100%' border='0' cellspacing='0' cellpadding='0'>
+	<tr>
+		<td width='80%'><h1>Keywords</h1></td>
+		<td align='left'><%= link_to "New Keyword", new_list_path %>
+	</tr>
+</table>
+
+<div id="content">	
+		<table width='100%' border='0' cellspacing='0' cellpadding='0'>
+			<%# render :partial => @lists %>
+			<% @lists.each do |f| %>
+				<tr class='someclass'>
+					<td class='Underline' width='30%' valign='top'><%= link_to f.keyword, f %></td>
+					<td class='Underline'><%= f.value.gsub(/\n/, "<br>").html_safe %></td>
+				</tr>
+			<% end %>
+		</table>
+</div>
+	

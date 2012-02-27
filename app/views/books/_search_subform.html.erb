@@ -1,0 +1,19 @@
+<div id="adv_search">
+	<%# form_tag( {:action => 'index'}, :method => 'get') do %>
+	<% form_tag( {:url => books_path}, :method => "get", :remote => true ) do %>
+		<div class="search_element">
+			<strong>Filter Results By:&nbsp;</strong>
+			<label>Author:</label>
+			<%= text_field_tag :author, h(params[:author]), :size => "40" %>
+		</div>
+		
+		<div class="search_element">
+			<label>Title:</label>
+			<%= text_field_tag :title, h(params[:title]), :size => "40" %>
+		</div>
+		
+		<div class="search_element">
+			<%= submit_tag "Filter" %>
+		</div>
+	<% end %>
+</div>

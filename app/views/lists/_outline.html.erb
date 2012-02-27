@@ -1,0 +1,9 @@
+
+<table height=100% width=100% border='0' cellpadding='0' cellspacing='0'>
+	<div id="content">
+		<ul id='tool'>	
+			<li id='tool_categ'><%= link_to "Edit", :action => :edit %></li>
+			<li id='tool_categ'><%= link_to "Delete", @list, :confirm => 'Confirm: Deletion of keyword: ' + @list.keyword + '?', :method => :delete %></li>
+		</ul>
+	</div>
+</table>

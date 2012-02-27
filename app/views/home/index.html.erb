@@ -1,0 +1,15 @@
+<div id="content">
+	<table border=0 cellspacing=0 cellpadding=0>
+		<tr>
+			<td>
+				<% x = List.find(:all, :conditions => {:keyword => 'Home'}).collect {| c | c.value } %>
+				<%= x.to_s.html_safe %>			
+			</td>
+			<td>
+				<div class="photo">
+					<%= image_tag 'box.png', :id => 'box' %>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
